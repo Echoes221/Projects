@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+<head>
+<!--calum.peak@vibrantmedia.com 2015-->
+<title>To Protocol Relative</title>
+
+<style>
+	body {
+		font-family: verdana, ariel;
+		font-size: 12px;
+	}
+	#changes {
+		padding-top: 20px;
+		width: 650px;
+		height: 600px;
+		overflow-y: scroll;
+		display: none;
+		/*Wordwrap*/
+		white-space: pre-wrap;      /* CSS3 */   
+	    white-space: -moz-pre-wrap; /* Firefox */    
+	    white-space: -pre-wrap;     /* Opera <7 */   
+	    white-space: -o-pre-wrap;   /* Opera 7 */    
+	    word-wrap: break-word;      /* IE */
+	}
+	li {
+		list-style: none;
+		margin: 0 0 15px 0;
+	}
+</style>
+</head>
+
+<body>
+
+<form id="textArea">
+	<textarea name="string" id="string" cols="90" rows="20"></textarea>
+	<br/>
+	<input id="button" type="button" value="To Protocol Relative" onClick="return toRelative();">
+	<input id="button" type="button" value="Escape Selection" onClick="return checkEscapeSelection();">
+	<input id="button" type="button" value="unEscape All" onClick="return unEscapeAll();">
+	<input id="button" type="button" value="Show Change History" onClick="return showChanges();">
+	<input id="button" type="button" value="Revert Change" onClick="return revertChange();">
+	<input id="button" type="button" value="Clear All" onClick="return clearText();">
+</form>
+
+<div id="changes"></div>
+
+<script src="adopsTool.js" type="text/Javascript"></script>
+
+</body>
+</html>
