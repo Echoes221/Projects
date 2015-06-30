@@ -47,7 +47,7 @@ function checkEscapeSelection() {
 //args(field, array, method, regex) ... may be a bit overboard
 function escapeSelection() {
 	//RegEx for all non-alphanumeric characters
-	var regNonAlphaNum = /[^a-zA-Z0-9\s]/g,
+	var regNonAlphaNum = new RegExp(/[^a-zA-Z0-9\s]/g),
 		replaceWith    = encodeURIComponent(getSelectionText(string));
 
 	//Check if punctuation to escape in selection
@@ -150,7 +150,7 @@ function getSelectionText(field) {
         sel = document.selection.createRange();
         console.log(sel);
         text = sel.text;
-    } else if (field.selectionStart) { // Chrome/Firefox
+    } else if (field.selectionStart >= 0) { // Chrome/Firefox
     	console.log(field.selectionStart, field.selectionEnd);
         text = field.value.substring(field.selectionStart, field.selectionEnd);
     }
@@ -180,7 +180,7 @@ function replaceSelection(field, replaceWith) {
         sel = document.selection.createRange();
 
         text = sel.text;
-    } else if (field.selectionStart) { // Chrome/Firefox
+    } else if (field.selectionStart >= 0) { // Chrome/Firefox
         start = field.selectionStart;
         stop = field.selectionEnd;
 
