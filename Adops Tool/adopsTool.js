@@ -151,7 +151,6 @@ function getSelectionText(field) {
         console.log(sel);
         text = sel.text;
     } else if (field.selectionStart >= 0) { // Chrome/Firefox
-    	console.log(field.selectionStart, field.selectionEnd);
         text = field.value.substring(field.selectionStart, field.selectionEnd);
     }
     return text;
